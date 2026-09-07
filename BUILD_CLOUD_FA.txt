@@ -1,0 +1,32 @@
+60 Second Escape — Cloud Build Ready
+=====================================
+
+این نسخه برای ساخت APK روی سرور ابری آماده شده و نیازی به نصب Unity روی گوشی ندارد.
+
+روش پیشنهادی با GitHub Actions:
+1) کل پوشه پروژه را در یک Repository در GitHub قرار دهید.
+2) در Settings > Secrets and variables > Actions سه Secret با نام‌های:
+   UNITY_EMAIL
+   UNITY_PASSWORD
+   UNITY_LICENSE
+   قرار دهید (روش فعال‌سازی Unity License بسته به نوع حساب Unity است).
+3) از تب Actions، workflow با نام "Build Android APK" را اجرا کنید.
+4) پس از موفقیت، در بخش Artifacts فایل 60SecondEscape-APK را دریافت کنید.
+5) فایل APK را با گوشی دانلود و نصب کنید.
+
+نکته:
+- Unity version پروژه: 2022.3.62f1
+- خروجی: APK (نه AAB)
+- نام برنامه: 60 Second Escape
+- Package ID: com.sixtysecondescape.game
+- جهت فعلی بازی: Landscape
+- فایل اصلی خروجی: Builds/60SecondEscape.apk
+
+روش Unity Build Automation:
+این پروژه همچنین اسکریپت Assets/Editor/CloudBuildSettings.cs را دارد.
+در Unity Build Automation می‌توانید repository را متصل کنید و Android target بسازید.
+اسکریپت قبل از Export صحنه را می‌سازد و تنظیمات Android را اعمال می‌کند.
+
+مهم:
+برای انتشار در Google Play بهتر است بعداً Release Keystore و AAB تنظیم شود.
+برای نصب مستقیم روی گوشی، APK مناسب است.
